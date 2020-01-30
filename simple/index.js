@@ -1,15 +1,12 @@
-var data = [30, 86, 168, 281, 303, 365];
+const data = [30, 86, 168, 281, 303, 365];
+
+const scaleFunc = d3.scaleLinear()
+  .domain([0, d3.max(data)])
+  .range([0, 420]);
 
 d3.select(".chart")
   .selectAll("div")
-  .data(data)
-    .enter()
-    .append("div")
-    .style("width", function(d) { return d * 2 + "px"; })
-    // .style("font", "10px sans-serif")
-    // .style("background-color", "steelblue")
-    // .style("text-align", "right")
-    // .style("padding", "3px")
-    // .style("margin", "1px")
-    // .style("color", "white")
+    .data(data)
+  .enter().append("div")
+    .style("width", function(d) { return scaleFunc(d) + "px"; })
     .text(function(d) { return '$ ' + d; });
