@@ -1,3 +1,13 @@
+body {
+  position: relative;
+}
+
+#title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10 0;
+}
+
 .bar {
   fill: steelblue;
 }
@@ -15,4 +25,25 @@
 
 .x.axis path {
   display: none;
+}
+
+#tooltip {
+  width: 150px;
+  height: 50px;
+  padding: 2px;
+  font: 12px;
+  background: lightsteelblue;
+  box-shadow: 1px 1px 10px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  pointer-events: none;
+}
+
+#overlay {
+  position: absolute;
+  background-color: white;
+  pointer-events: none;
 }
