@@ -89,11 +89,12 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         overlay.transition()
           .duration(0)
           .style('opacity', 0.9);
+        console.log(`${i * barWidth}0px`)
         overlay
           .style('top', `${y(d.value) + margin.top + 40}px`)
-          .style('left', `${i * barWidth}0px`)
+          .style('left', `${i * barWidth}px`)
           .style('width', `${barWidth}px`)
-          .style('transform', `translateX(${margin.left + 4}px)`)
+          .style('transform', `translateX(${margin.left + 3.8}px)`)
           .style('height', `${height - y(d.value)}px`);
       })
       .on('mouseout', function (d) {
